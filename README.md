@@ -5,8 +5,8 @@
 
 ![](https://img.shields.io/badge/version-1.0%20alpha-orange?style=plastic&logo=version)&nbsp;
 ![](https://img.shields.io/badge/Docker--blue?style=plastic&logo=docker)&nbsp;
-![](https://img.shields.io/badge/Github%20Actions-white?style=plastic&logo=githubactions)&nbsp;
 ![](https://img.shields.io/badge/Python-3.10-blue?style=plastic&logo=python)&nbsp;
+<!-- ![](https://img.shields.io/badge/Github%20Actions-white?style=plastic&logo=githubactions)&nbsp; -->
 </div>
 
 ----------
