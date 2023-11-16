@@ -7,30 +7,19 @@
     Docker container monitor and alert system 
 """
 
-import sys
+import os
 import time
 import docker
 import requests
 
-# Default values for arguments
-DEFAULT_VALUES = {
-    "container_name": "default_container",
-    "discord_webhook_url": "None",
-    "health_check_interval": 10,
-}
-
-args = dict(arg.split('=') for arg in sys.argv[1:]) if len(sys.argv) > 1 else {}    # Parse command-line arguments into a dictionary
-arguments = {**DEFAULT_VALUES, **args}                                              # Merge with default values
-
-# Access individual arguments
-CONTAINER_NAME          = arguments.get("container_name")
-DISCORD_WEBHOOK_URL     = arguments.get("discord_webhook_url")
-HEALTH_CHECK_INTERVAL   = int(arguments.get("health_check_interval"))
+CONTAINER_NAME          = os.getenv("container_name", "test_img")
+DISCORD_WEBHOOK_URL     = os.getenv("discord_webhook_url", None)
+HEALTH_CHECK_INTERVAL   = int(os.getenv("health_check_interval", "10"))
 
 def send_notification(container_name, logs, webhook_url):
     payload = {
         'container_name': container_name,
-        'logs': logs
+        'details': logs
     }
     # requests.post(webhook_url, json=payload)
     print(payload)
@@ -68,5 +57,3 @@ def monitor_container(container_name, webhook_url):
 
 if __name__ == "__main__":
     monitor_container(CONTAINER_NAME, DISCORD_WEBHOOK_URL)
-
-# python3.10 main.py container_name=blissful_carver discord_webhook_url=https://custom/webhook
