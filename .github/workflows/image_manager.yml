@@ -1,0 +1,30 @@
+name: Build and Push image
+on:
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+  build_n_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: build
+        run: |
+          cd app
+          docker build -t ashraftheminhaj/pydonitor:latest
+
+      - name: log in to dockerhub
+        run: echo ${{secrets.DH_ACCESS_TOKEN}} | docker login --username=ashraftheminhaj --password-stdin 
+
+      # - name: where am I
+      #   run: pwd; ls example/auto_fail_sample_with_logs/
+
+      # - uses: adrielcodeco/docker-compose-run-action@v1
+      #   with:
+      #     compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
+          # service: my-service
