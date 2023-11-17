@@ -24,6 +24,8 @@ jobs:
       # - name: Test Auto Fail Example # -d --build
       #   run: |
       #     cd example/auto_fail_sample_with_logs ; docker-compose up 
+      - name: where am I
+        run: pwd
 
       - uses: adrielcodeco/docker-compose-run-action@v1
         with:
