@@ -1,10 +1,17 @@
-name: Build and Push image
+#############################################
+# author: ashraf minhaj
+# email : ashraf_minhaj@yahoo.com
+# 
+# date: 18-11-23
+# builds latest image and pushes to dockerhub
+# runs on main after passing tests.
+#############################################
+
+name: main # Build and Push image
 on:
   push:
     branches:
-      - '*'
-      - '*/*' 
-
+      - 'main'
 
 jobs:
   build_n_push:
@@ -21,11 +28,6 @@ jobs:
 
       - name: log in to dockerhub
         run: echo ${{secrets.DH_ACCESS_TOKEN}} | docker login --username=ashraftheminhaj --password-stdin 
-
-      # - name: where am I
-      #   run: pwd; ls example/auto_fail_sample_with_logs/
-
-      # - uses: adrielcodeco/docker-compose-run-action@v1
-      #   with:
-      #     compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
-          # service: my-service
+      
+      - name: push
+        run: docker push ashraftheminhaj/pydonitor:latest
