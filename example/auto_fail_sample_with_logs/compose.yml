@@ -20,7 +20,9 @@ services:
   pydonitor:
     tty: true
     container_name: pydonitor
-    image: ashraftheminhaj/pydonitor:1.1
+    build:
+      context: ../../app
+      dockerfile: Dockerfile
     environment:
       - container_name=failing_app
       - discord_webhook_url=https://custom/webhook

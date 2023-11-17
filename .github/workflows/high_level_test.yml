@@ -1,4 +1,13 @@
-name: test pydonitor funtionality
+#############################################
+# author: ashraf minhaj
+# email : ashraf_minhaj@yahoo.com
+# 
+# date: 18-11-23
+# runs pydonitor and test it's functionality
+# should run on a feature branch
+#############################################
+
+name: test # test pydonitor funtionality
 on:
   push:
     branches:
@@ -9,6 +18,7 @@ on:
 
 
 jobs:
+  # test using a docekr container that fails after some seconds
   test_auto_fail:
     runs-on: ubuntu-latest
 
@@ -25,10 +35,3 @@ jobs:
         run: |
           cd example/auto_fail_sample_with_logs
           docker compose up 
-      # - name: where am I
-      #   run: pwd; ls example/auto_fail_sample_with_logs/
-
-      # - uses: adrielcodeco/docker-compose-run-action@v1
-      #   with:
-      #     compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
-          # service: my-service
