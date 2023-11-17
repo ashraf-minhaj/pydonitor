@@ -9,18 +9,23 @@ on:
 
 
 jobs:
-  build:
+  test_auto_fail:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Docker Compose
-      uses: docker/compose-cli@v1
-      # with:
-      #   version: 1.29.2  # Specify the Docker Compose version
+      # - name: Set up Docker Compose
+      #   uses: docker/compose-cli@v1
+      #   # with:
+      #   #   version: 1.29.2  # Specify the Docker Compose version
 
-    - name: Test Auto Fail Example # -d --build
-      run: |
-        cd example/auto_fail_sample_with_logs ; docker-compose up 
+      # - name: Test Auto Fail Example # -d --build
+      #   run: |
+      #     cd example/auto_fail_sample_with_logs ; docker-compose up 
+
+      - uses: adrielcodeco/docker-compose-run-action@v1
+        with:
+          compose-file: 'example/auto_fail_sample_with_logs/docker-compose.yml'
+          # service: my-service
