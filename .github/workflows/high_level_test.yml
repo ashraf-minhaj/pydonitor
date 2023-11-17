@@ -1,0 +1,37 @@
+#############################################
+# author: ashraf minhaj
+# email : ashraf_minhaj@yahoo.com
+# 
+# date: 18-11-23
+# runs pydonitor and test it's functionality
+# should run on a feature branch
+#############################################
+
+name: test # test pydonitor funtionality
+on:
+  push:
+    branches:
+      # - '*'       # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!main' 
+
+
+jobs:
+  # test using a docekr container that fails after some seconds
+  test_auto_fail:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # - name: Set up Docker Compose
+      #   uses: docker/compose-cli@v1
+      #   # with:
+      #   #   version: 1.29.2  # Specify the Docker Compose version
+
+      - name: Test Auto Fail Example # -d --build
+        run: |
+          cd example/auto_fail_sample_with_logs
+          docker compose up 

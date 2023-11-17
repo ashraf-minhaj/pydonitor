@@ -1,0 +1,33 @@
+#############################################
+# author: ashraf minhaj
+# email : ashraf_minhaj@yahoo.com
+# 
+# date: 18-11-23
+# builds latest image and pushes to dockerhub
+# runs on main after passing tests.
+#############################################
+
+name: main # Build and Push image
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build_n_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: build
+        run: |
+          cd app
+          docker build -t ashraftheminhaj/pydonitor:latest .
+
+      - name: log in to dockerhub
+        run: echo ${{secrets.DH_ACCESS_TOKEN}} | docker login --username=ashraftheminhaj --password-stdin 
+      
+      - name: push
+        run: docker push ashraftheminhaj/pydonitor:latest
