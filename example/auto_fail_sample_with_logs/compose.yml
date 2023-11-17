@@ -30,4 +30,4 @@ services:
       - my_app
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/docker/
+      # - /var/lib/docker/
