@@ -29,4 +29,4 @@ jobs:
       - name: Test Auto Fail Example # -d --build
         run: |
           cd example/auto_fail_sample_with_logs
-          docker compose run -e discord_webhook_url=${{secrets.DISCORD_WEBHOOK}}
+          docker compose run -e discord_webhook_url=${{secrets.DISCORD_WEBHOOK}} pydonitor
