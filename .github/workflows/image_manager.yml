@@ -17,7 +17,7 @@ jobs:
       - name: build
         run: |
           cd app
-          docker build -t ashraftheminhaj/pydonitor:latest
+          docker build -t ashraftheminhaj/pydonitor:latest .
 
       - name: log in to dockerhub
         run: echo ${{secrets.DH_ACCESS_TOKEN}} | docker login --username=ashraftheminhaj --password-stdin 
