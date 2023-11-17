@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Log messages 
-for i in {1..1000}; do
+for i in {1..2000}; do
     echo "Log message $i"
-    sleep 1
+    sleep 60
 done
 
 # Fail with an error message
