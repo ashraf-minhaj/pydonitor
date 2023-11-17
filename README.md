@@ -1,9 +1,11 @@
 <div align="center">
 
-# pydonitor
+# PyDoNitor
 ![banner](docs/banner.png)
 
-![](https://img.shields.io/badge/version-1.1%20alpha-orange?style=plastic&logo=version)&nbsp;
+![main workflow](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/image_manager.yml/badge.svg)&nbsp;
+![test](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/high_level_test.yml/badge.svg)&nbsp;
+![](https://img.shields.io/badge/version-1.2%20alpha-orange?style=plastic&logo=version)&nbsp;
 ![](https://img.shields.io/badge/Docker--blue?style=plastic&logo=docker)&nbsp;
 ![](https://img.shields.io/badge/Python-3.10-blue?style=plastic&logo=python)&nbsp;
 <!-- ![](https://img.shields.io/badge/Github%20Actions-white?style=plastic&logo=githubactions)&nbsp; -->
