@@ -10,7 +10,8 @@
 import os
 import time
 import docker
-import requests
+from discord_webhook import DiscordWebhook, DiscordEmbed
+
 
 CONTAINER_NAME          = os.getenv("container_name", "test_img")
 DISCORD_WEBHOOK_URL     = os.getenv("discord_webhook_url", None)
@@ -23,6 +24,17 @@ def send_notification(container_name, logs, webhook_url):
     }
     # requests.post(webhook_url, json=payload)
     print(payload)
+    succss = False
+    try:
+        webhook = DiscordWebhook(url=webhook_url)
+        embed = DiscordEmbed(description=f'Details: {payload}', color="FFFF00")
+        embed.set_author(name="Container Alert")
+        webhook.add_embed(embed)
+        webhook.execute()
+    except Exception as e:
+        error = e
+        print(str(error))
+    return succss
 
 def monitor_container(container_name, webhook_url):
     # a flag that changes when a container is running

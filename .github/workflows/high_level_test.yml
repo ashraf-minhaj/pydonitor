@@ -26,12 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # - name: Set up Docker Compose
-      #   uses: docker/compose-cli@v1
-      #   # with:
-      #   #   version: 1.29.2  # Specify the Docker Compose version
-
       - name: Test Auto Fail Example # -d --build
         run: |
           cd example/auto_fail_sample_with_logs
-          docker compose up 
+          docker compose up -e discord_webhook_url=${{secrets.DISCORD_WEBHOOK}}
