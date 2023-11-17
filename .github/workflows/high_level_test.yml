@@ -24,10 +24,10 @@ jobs:
       # - name: Test Auto Fail Example # -d --build
       #   run: |
       #     cd example/auto_fail_sample_with_logs ; docker-compose up 
-      - name: where am I
-        run: pwd; ls
+      # - name: where am I
+      #   run: pwd; ls example/auto_fail_sample_with_logs/
 
       - uses: adrielcodeco/docker-compose-run-action@v1
         with:
-          compose-file: 'example/auto_fail_sample_with_logs/docker-compose.yml'
+          compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
           # service: my-service
