@@ -21,13 +21,14 @@ jobs:
       #   # with:
       #   #   version: 1.29.2  # Specify the Docker Compose version
 
-      # - name: Test Auto Fail Example # -d --build
-      #   run: |
-      #     cd example/auto_fail_sample_with_logs ; docker-compose up 
+      - name: Test Auto Fail Example # -d --build
+        run: |
+          cd example/auto_fail_sample_with_logs
+          docker compose up 
       # - name: where am I
       #   run: pwd; ls example/auto_fail_sample_with_logs/
 
-      - uses: adrielcodeco/docker-compose-run-action@v1
-        with:
-          compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
+      # - uses: adrielcodeco/docker-compose-run-action@v1
+      #   with:
+      #     compose-file: 'example/auto_fail_sample_with_logs/compose.yml'
           # service: my-service
