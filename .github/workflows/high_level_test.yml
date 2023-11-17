@@ -1,0 +1,26 @@
+name: test pydonitor funtionality
+on:
+  push:
+    branches:
+      # - '*'       # matches every branch that doesn't contain a '/'
+      - '*/*'       # matches every branch containing a single '/'
+      - '**'        # matches every branch
+      - '!main' 
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Compose
+      uses: docker/compose-cli@v1
+      # with:
+      #   version: 1.29.2  # Specify the Docker Compose version
+
+    - name: Test Auto Fail Example # -d --build
+      run: |
+        cd example/auto_fail_sample_with_logs ; docker-compose up 
