@@ -17,7 +17,9 @@
 ### Alerts on container 'state' change with crash report.
 
 <div align="center">
+
 ![discord](docs/discord_demo.png)
+
 Now works with discord!!
 </div>
 
