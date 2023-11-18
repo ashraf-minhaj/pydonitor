@@ -1,11 +1,9 @@
 #!/bin/sh
 
-# Log messages 
-for i in {1..2000}; do
-    echo "Log message $i"
-    sleep 60
-done
+# Log messages
+echo "Log message $i"
+sleep 60
 
 # Fail with an error message
-echo "Container failed intentionally"
+echo "Container failed due to mood swing"
 exit 1
