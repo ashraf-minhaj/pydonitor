@@ -3,6 +3,7 @@
 # PyDoNitor
 ![banner](docs/banner.png)
 
+![](https://img.shields.io/badge/License-MIT%20License-red?style=plastic&logo=mit)&nbsp;
 ![main workflow](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/image_manager.yml/badge.svg)&nbsp;
 ![test](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/high_level_test.yml/badge.svg)&nbsp;
 ![](https://img.shields.io/badge/version-1.2%20alpha-orange?style=plastic&logo=version)&nbsp;
@@ -13,14 +14,18 @@
 
 ----------
 
-Alerts on container 'state' change with crash report.
+### Alerts on container 'state' change with crash report.
+
+<div align="center">
+![discord](docs/discord_demo.png)
+Now works with discord!!
+</div>
 
 ## Features
-- light weight image
-- get crash logs
+- Discord notification system with crash logs
 
 ## Future Considerations
-- Discord notification system with crash logs
+- limit last number of logs
 - Slack notification
 
 ## How to use
@@ -50,7 +55,27 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
 
-### Find me 
-* linkedin [ashraf-minaj](https://www.linkedin.com/in/ashraf-minhaj)
 
-> (c) ashraf minhaj
+### Find me 
+* linkedin [ashraf-minhaj](https://www.linkedin.com/in/ashraf-minhaj)
+
+
+###  License
+>Copyright (c) 2023 Ashrafur Rahman Minhaj
+>
+>Permission is hereby granted, free of charge, to any person obtaining a copy
+>of this software and associated documentation files (the "Software"), to deal
+>in the Software without restriction, including without limitation the rights
+>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+>copies of the Software, and to permit persons to whom the Software is
+>furnished to do so, subject to the following conditions:
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
