@@ -3,9 +3,13 @@
 # PyDoNitor
 ![banner](docs/banner.png)
 
-![](https://img.shields.io/badge/License-MIT%20License-red?style=plastic&logo=mit)&nbsp;
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ashraf-minhaj_pydonitor&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ashraf-minhaj_pydonitor)&nbsp;
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ashraf-minhaj_pydonitor&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=ashraf-minhaj_pydonitor)&nbsp;
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ashraf-minhaj_pydonitor&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ashraf-minhaj_pydonitor)&nbsp;
 ![main workflow](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/image_manager.yml/badge.svg)&nbsp;
 ![test](https://github.com/ashraf-minhaj/pydonitor/actions/workflows/high_level_test.yml/badge.svg)&nbsp;
+
+![](https://img.shields.io/badge/License-MIT%20License-red?style=plastic&logo=mit)&nbsp;
 ![](https://img.shields.io/badge/version-1.3%20alpha-orange?style=plastic&logo=version)&nbsp;
 ![](https://img.shields.io/badge/Docker--blue?style=plastic&logo=docker)&nbsp;
 ![](https://img.shields.io/badge/Python-3.10-blue?style=plastic&logo=python)&nbsp;
@@ -28,6 +32,7 @@ Now works with discord!!
 
 ## Future Considerations
 - limit last number of logs
+- Monitor multiple containers
 - Slack notification
 
 ## How to use
